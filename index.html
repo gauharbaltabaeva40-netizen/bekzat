@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmileDent — Заманауи стоматология клиникасы</title>
+
+<meta name="description"
+content="SmileDent стоматологиясы — тістерді емдеу, имплантация, ортодонтия және кәсіби тазалау қызметтері.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#0ea5e9;
+    --primary-dark:#0284c7;
+    --dark:#0f172a;
+    --gray:#64748b;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:var(--dark);
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+section{
+    padding:100px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+    background:transparent;
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:white;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+.navbar{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:800;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:500;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    padding-top:150px;
+    background:linear-gradient(135deg,#f0f9ff,#ffffff);
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:var(--gray);
+    margin-bottom:30px;
+    font-size:1.1rem;
+}
+
+.hero img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--gray);
+}
+
+.about{
+    background:var(--light);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.doctors-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.doctor{
+    text-align:center;
+}
+
+.doctor img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.testimonials{
+    background:var(--light);
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.cta{
+    text-align:center;
+    background:var(--primary);
+    color:white;
+}
+
+.cta h2{
+    margin-bottom:20px;
+    font-size:2.5rem;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,textarea{
+    padding:15px;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:150px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    padding:40px 0;
+    text-align:center;
+}
+
+@media(max-width:900px){
+
+.hero-content,
+.about-grid,
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2.7rem;
+}
+
+.nav-links{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:250px;
+    height:100vh;
+    background:white;
+    flex-direction:column;
+    padding:30px;
+    transition:.4s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+<div class="logo">SmileDent</div>
+
+<ul class="nav-links">
+<li><a href="#home">Басты бет</a></li>
+<li><a href="#services">Қызметтер</a></li>
+<li><a href="#about">Біз туралы</a></li>
+<li><a href="#doctors">Дәрігерлер</a></li>
+<li><a href="#contact">Байланыс</a></li>
+</ul>
+
+<div class="menu-btn">☰</div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div>
+<h1>Сіздің жарқын күлкіңіз — біздің басты мақсатымыз</h1>
+
+<p>
+Заманауи технологиялар мен тәжірибелі мамандар көмегімен
+тістеріңізге кәсіби күтім жасаймыз.
+</p>
+
+<a href="#contact" class="btn">Жазылу</a>
+<a href="#services" class="btn btn-outline">Қызметтер</a>
+</div>
+
+<div>
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200" alt="Dental Clinic">
+</div>
+
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+
+<div class="section-title">
+<h2>Біздің қызметтер</h2>
+<p>Стоматология саласындағы толық қызметтер жиынтығы</p>
+</div>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>Тістерді емдеу</h3>
+<p>Кариесті және басқа да стоматологиялық мәселелерді тиімді емдеу.</p>
+</div>
+
+<div class="card">
+<h3>Имплантация</h3>
+<p>Заманауи импланттар арқылы жоғалған тістерді қалпына келтіру.</p>
+</div>
+
+<div class="card">
+<h3>Ортодонтия</h3>
+<p>Брекет жүйелері және тістерді түзету қызметтері.</p>
+</div>
+
+<div class="card">
+<h3>Кәсіби тазалау</h3>
+<p>Тістерді ағарту және кәсіби гигиеналық тазалау.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+
+<div>
+<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1200" alt="">
+</div>
+
+<div>
+<h2>Біз туралы</h2>
+<br>
+<p>
+SmileDent клиникасы жоғары сапалы стоматологиялық қызмет көрсетеді.
+Біздің мақсатымыз — әр пациентке жайлы ортада кәсіби көмек беру.
+</p>
+<br>
+<p>
+10+ жыл тәжірибе, заманауи жабдықтар және халықаралық стандарттар.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="doctors">
+<div class="container">
+
+<div class="section-title">
+<h2>Біздің мамандар</h2>
+<p>Тәжірибелі және білікті дәрігерлер командасы</p>
+</div>
+
+<div class="doctors-grid">
+
+<div class="doctor">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1000" alt="">
+<h3>Айбек Сейітов</h3>
+<p>Бас стоматолог</p>
+</div>
+
+<div class="doctor">
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=1000" alt="">
+<h3>Аружан Нұрланқызы</h3>
+<p>Ортодонт</p>
+</div>
+
+<div class="doctor">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1000" alt="">
+<h3>Данияр Ермеков</h3>
+<p>Имплантолог</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+
+<div class="section-title">
+<h2>Пациенттердің пікірі</h2>
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<p>
+"Қызмет көрсету деңгейі өте жоғары. Дәрігерлер кәсіби."
+</p>
+<br>
+<strong>— Мадина</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"Тістерімді ағарту нәтижесі керемет болды."
+</p>
+<br>
+<strong>— Әлихан</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"Клиника өте таза әрі заманауи жабдықталған."
+</p>
+<br>
+<strong>— Жанар</strong>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2>Бүгін қабылдауға жазылыңыз</h2>
+<p>Сау әрі әдемі күлкіге алғашқы қадам жасаңыз</p>
+<br>
+<a href="#contact" class="btn">Тегін кеңес алу</a>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<div class="section-title">
+<h2>Байланыс</h2>
+<p>Бізбен хабарласыңыз</p>
+</div>
+
+<div class="contact-grid">
+
+<div>
+<h3>Байланыс ақпараты</h3>
+<br>
+<p>📍 Алматы қ., Қазақстан</p>
+<p>📞 +7 (777) 123-45-67</p>
+<p>✉ info@smiledent.kz</p>
+</div>
+
+<form>
+<input type="text" placeholder="Атыңыз">
+<input type="email" placeholder="Email">
+<input type="tel" placeholder="Телефон">
+<textarea placeholder="Хабарлама"></textarea>
+<button class="btn">Жіберу</button>
+</form>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>© 2026 SmileDent. Барлық құқықтар қорғалған.</p>
+</div>
+</footer>
+
+<script>
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+</script>
+
+</body>
+</html>
